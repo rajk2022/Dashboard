@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Deployment Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Barlow',sans-serif; background:#0E1520; color:#E8EDF5; padding:30px; font-size:14px; }
+  .wrap { max-width:860px; margin:0 auto; }
+  h1 { font-family:'Barlow Condensed',sans-serif; font-size:2rem; font-weight:900; letter-spacing:3px; text-transform:uppercase; color:#fff; }
+  h1 span { color:#3A8FD8; }
+  .subtitle { color:#6A7A90; font-size:0.8rem; letter-spacing:1px; text-transform:uppercase; margin-top:4px; margin-bottom:30px; }
+  .step { background:#161F30; border:1px solid #2A3850; border-radius:10px; padding:20px 24px; margin-bottom:16px; display:flex; gap:20px; align-items:flex-start; }
+  .step-num { background:#3A8FD8; color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:1.3rem; font-weight:900; min-width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-body h3 { font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px; }
+  .step-body p { color:#A8B8C8; line-height:1.7; font-size:0.9rem; }
+  .step-body ul { color:#A8B8C8; line-height:1.8; font-size:0.9rem; padding-left:18px; }
+  .step-body li { margin-bottom:2px; }
+  code { background:#0A1428; color:#50D890; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-family:monospace; }
+  .code-block { background:#0A1428; border:1px solid #2A3850; border-radius:6px; padding:14px 18px; margin:10px 0; font-family:monospace; font-size:0.85rem; color:#50D890; line-height:1.8; }
+  .badge { display:inline-block; padding:2px 10px; border-radius:4px; font-size:0.75rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+  .badge-free { background:#1A4A1A; color:#50D890; }
+  .badge-win { background:#1A2A4A; color:#3A8FD8; }
+  .tip { background:#1A2A1A; border:1px solid #2A6A2A; border-radius:6px; padding:12px 16px; margin-top:10px; color:#90D890; font-size:0.85rem; }
+  .divider { border:none; border-top:1px solid #2A3850; margin:24px 0; }
+  .final-box { background:linear-gradient(135deg,#1B3A5C,#1A2A50); border:2px solid #3A8FD8; border-radius:10px; padding:20px 24px; text-align:center; }
+  .final-box h2 { font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:900; letter-spacing:2px; color:#3A8FD8; }
+  .final-box p { color:#A8B8C8; margin-top:8px; font-size:0.9rem; }
+  .url-box { background:#0A1428; border:1px solid #3A8FD8; border-radius:6px; padding:10px 20px; margin:14px auto; display:inline-block; font-family:monospace; color:#50D890; font-size:1rem; letter-spacing:1px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Get a <span>Permanent Link</span> — Step by Step</h1>
+<p class="subtitle">Deploy your Training Dashboard online · Free · Takes ~10 minutes</p>
+
+<!-- STEP 1 -->
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-body">
+    <h3>Create a Free GitHub Account <span class="badge badge-free">FREE</span></h3>
+    <p>GitHub is where you'll store your dashboard files. It's free and takes 2 minutes.</p>
+    <ul>
+      <li>Go to <code>github.com</code> → click <strong>Sign up</strong></li>
+      <li>Choose any username (e.g., <code>training-dashboard</code>)</li>
+      <li>Verify your email</li>
+    </ul>
+  </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-body">
+    <h3>Create a New Repository</h3>
+    <p>A repository = a folder on GitHub to store your app files.</p>
+    <ul>
+      <li>Click the <strong>+</strong> icon (top right) → <strong>New repository</strong></li>
+      <li>Name it: <code>training-dashboard</code></li>
+      <li>Set to <strong>Public</strong></li>
+      <li>Click <strong>Create repository</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- STEP 3 -->
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-body">
+    <h3>Upload These 3 Files <span class="badge badge-win">from the ZIP you downloaded</span></h3>
+    <p>On your new GitHub repo page, click <strong>uploading an existing file</strong>.</p>
+    <p style="margin-top:8px">Drag and drop these 3 files:</p>
+    <div class="code-block">
+      📄  app.py<br>
+      📄  dashboard_data.json<br>
+      📄  requirements.txt
+    </div>
+    <ul>
+      <li>Click <strong>Commit changes</strong> (green button at bottom)</li>
+    </ul>
+    <div class="tip">💡 Your files are now on the internet — but the app isn't live yet. Next step does that.</div>
+  </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-body">
+    <h3>Deploy on Streamlit Community Cloud <span class="badge badge-free">FREE</span></h3>
+    <ul>
+      <li>Go to <code>share.streamlit.io</code></li>
+      <li>Click <strong>Sign in with GitHub</strong> — use the same account</li>
+      <li>Click <strong>New app</strong></li>
+      <li>Fill in:
+        <div class="code-block">
+          Repository:  your-username/training-dashboard<br>
+          Branch:      main<br>
+          Main file:   app.py
+        </div>
+      </li>
+      <li>Click <strong>Deploy!</strong></li>
+      <li>Wait ~2 minutes for it to build</li>
+    </ul>
+    <div class="tip">✅ You now have a permanent link! It looks like:<br><br>
+      <strong>https://your-username-training-dashboard-app-xxxx.streamlit.app</strong>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 5 -->
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-body">
+    <h3>🎉 Share the Link with Your Manager</h3>
+    <p>Copy the URL from Streamlit and send it. That's it. Your manager can:</p>
+    <ul>
+      <li>View the full dashboard on <strong>any device, any browser</strong></li>
+      <li>Click <strong>✏️ Edit Data</strong> tab → edit numbers directly</li>
+      <li>Click <strong>💾 Save Changes</strong> → charts update instantly</li>
+      <li>Switch back to <strong>📊 Dashboard</strong> tab to see new charts</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- HOW TO UPDATE DATA -->
+<div class="step">
+  <div class="step-num">✏️</div>
+  <div class="step-body">
+    <h3>How to Update Data Later</h3>
+    <p><strong>Option A — Easiest:</strong> Use the Edit Data tab in the dashboard directly. No files, no uploads.</p>
+    <br>
+    <p><strong>Option B — Bulk update from Excel:</strong></p>
+    <ul>
+      <li>Update your <code>Dashboard.xlsx</code> (Sheet1)</li>
+      <li>Run this one command in the same folder:</li>
+    </ul>
+    <div class="code-block">python regenerate.py</div>
+    <ul>
+      <li>Upload the new <code>dashboard_data.json</code> to GitHub (drag & drop, replace old file)</li>
+      <li>Dashboard updates automatically within 30 seconds</li>
+    </ul>
+  </div>
+</div>
+
+<div class="final-box">
+  <h2>Your Permanent Dashboard URL</h2>
+  <div class="url-box">https://[yourname]-training-dashboard-app.streamlit.app</div>
+  <p>Send this link to your manager. No login needed to view. Works on mobile too.</p>
+</div>
+
+</div>
+</body>
+</html>
